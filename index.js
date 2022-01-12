@@ -77,3 +77,14 @@ const maryte = {
 
 console.log(`${jonas.name}, ${jonas.surname}, yra ${jonas.age} metu amziaus`)
 
+function prisistatymas(vardas) {
+    console.log(
+    `${vardas.name} ${vardas.surname} yra ${vardas.age} metu amziaus.`
+    );
+}
+
+prisistatymas(jonas);
+prisistatymas(maryte);
+
+
+
