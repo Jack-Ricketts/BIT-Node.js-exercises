@@ -62,29 +62,59 @@ akronimuGeneratorius(s3);
 akronimuGeneratorius(s4);
 
 // [Vardas] [Pavarde] yra [amzius] metu amziaus.
+const people = [
+    { name: 'Jonas', surname: 'Jonaitis', age: 99 },
+    { name: 'Maryte', surname: 'Marytaite', age: 87 },
+];
 
-const jonas = {
-    name: 'Jonas',
-    surname: 'Jonaitis',
-    age: 99,
+function introduce(person) {
+    console.log(`${person.name} ${person.surname} yra ${person.age} metu amziaus`);
 }
 
-const maryte = {
-    name: 'Maryte',
-    surname: 'Marytaite',
-    age: 87,
+console.log('-------- for');
+
+const forSize = people.length;
+for (let i = 0; i < forSize; i++) {
+    const person = people[i];
+    introduce(person);
 }
 
-console.log(`${jonas.name}, ${jonas.surname}, yra ${jonas.age} metu amziaus`)
+console.log('-------- while');
 
-function prisistatymas(vardas) {
-    console.log(
-    `${vardas.name} ${vardas.surname} yra ${vardas.age} metu amziaus.`
-    );
+let iw = 0;
+const whileSize = people.length;
+while (iw < whileSize) {
+    const person = people[iw];
+    introduce(person);
+    iw++;
 }
 
-prisistatymas(jonas);
-prisistatymas(maryte);
+console.log('-------- do-while');
 
+let idw = 0;
+const doWhileSize = people.length;
+do {
+    const person = people[idw];
+    introduce(person);
+    idw++;
+} while (idw < doWhileSize);
 
+console.log('-------- for-of');
+
+for (const person of people) {
+    introduce(person);
+}
+
+console.log('-------- for-in');
+
+for (const i in people) {
+    const person = people[i]
+    introduce(person);
+}
+
+console.log('-------- foreach');
+
+people.forEach((person) => {
+    introduce(person);
+})
 
