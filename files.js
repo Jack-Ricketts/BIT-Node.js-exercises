@@ -15,14 +15,19 @@ const fs = require('fs/promises');
     
         const drinkDetails = drink.split(' ');
         const [name, price, count] = drinkDetails;
-        totalSum = parseInt(count) * parseFloat(price);
-        // totalSum = +count * +price;
+        // totalSum = parseInt(count) * parseFloat(price);
         //parseInt(sveikieji), parseFloat(desimtainiai)
-        console.log(`Pasirinkimas ${++i}: ${name}, kurio kaina yra ${price} EUR buvo parduota ${count} kiekis ir bendra apyvarta yra ${totalSum.toFixed(2)}.`);
+
+        const balance = +count * +price;
+        const precision = 2;
+        const b1 = balance.toFixed(precision);
+        // const b2 = Math.round(balance * (10 ** precision)) / (10 ** precision);
+
+        console.log(`Pasirinkimas ${++i}: ${name}, kurio kaina yra ${price} EUR buvo parduota ${count} kiekis ir bendra apyvarta yra ${b1} EUR.`);
     }
-    
-    
 })();
+
+
 
 
 
